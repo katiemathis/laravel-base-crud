@@ -20,9 +20,9 @@
             <label for="thumb" class="form-label">Title</label>
             <input type="text" class="form-control" id="title" name="title" placeholder="Enter Comic Title">
         </div>
-        <div class="form-floating">
+        <div class="mb-3">
             <label for="description">Description</label>
-            <textarea class="form-control" placeholder="Enter brief description" id="description"></textarea>
+            <input type="text" class="form-control" id="description" name="description" placeholder="Enter description">
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">Price</label>
@@ -31,6 +31,14 @@
         <div class="mb-3">
             <label for="series" class="form-label">Series</label>
             <input type="text" class="form-control" id="series" name="series" placeholder="Enter Comic Series">
+        </div>
+        <div class="mb-3">
+            <label for="sale_date" class="form-label">Sale Date</label>
+            <input type="text" class="form-control" id="sale_date" name="sale_date" placeholder="Enter Sale Date">
+        </div>
+        <div class="mb-3">
+            <label for="type" class="form-label">Type</label>
+            <input type="text" class="form-control" id="type" name="type" placeholder="Enter Type">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
 
