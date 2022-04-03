@@ -18,6 +18,8 @@
                     <th scope="col">Series</th>
                     <th scope="col">Sale Date</th>
                     <th scope="col">Type</th>
+                    <th scope="col">User Options</th>
+
                 </tr>
                 </thead>
                 <tbody>
@@ -30,6 +32,7 @@
                             <td>{{$comic->series}}</td>
                             <td>{{$comic->sale_date}}</td>
                             <td>{{$comic->type}}</td>
+                            <td><a type="button" class="btn btn-primary mt-5" href="{{route('comic.show', $comic->id)}}" role="button">See Details</a></td>
                         </tr>
                     @endforeach
                 </tbody>

@@ -47,17 +47,17 @@ class FumettiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Comic $comic)
     {
-        $comic = Comic::find($id);
+        //$comic = Comic::find($id);
 
-        if ($comic) {
+        //if ($comic) {
 
             return view('comic.show', compact('comic'));
 
-        } else {
-            abort(404);
-        }
+       // } else {
+       //     abort(404);
+       // }
     }
 
     /**
