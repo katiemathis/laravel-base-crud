@@ -27,7 +27,7 @@ class FumettiController extends Controller
      */
     public function create()
     {
-        //
+        return view('comic.create');
     }
 
     /**

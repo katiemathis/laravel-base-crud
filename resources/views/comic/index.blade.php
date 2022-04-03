@@ -5,8 +5,8 @@
 @section('content')
 
     <div class="container">
-
-            <h1>Comic Book List</h1>
+            <h1>Comic Book List</h1>    
+            <a type="button" class="btn btn-warning m-2" href="{{route('comic.create')}}" role="button">Add New Comic</a>
 
             <table class="table">
                 <thead>
@@ -37,6 +37,6 @@
                     @endforeach
                 </tbody>
             </table>
-
+            
     </div>
 @endsection
