@@ -17,4 +17,4 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::resource('fumetti', 'FumettiController');
+Route::resource('comic', 'FumettiController');
