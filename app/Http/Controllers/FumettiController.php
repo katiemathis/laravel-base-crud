@@ -49,7 +49,15 @@ class FumettiController extends Controller
      */
     public function show($id)
     {
-        //
+        $comic = Comic::find($id);
+
+        if ($comic) {
+
+            return view('comic.show', compact('comic'));
+
+        } else {
+            abort(404);
+        }
     }
 
     /**

@@ -11,6 +11,7 @@
             <table class="table">
                 <thead>
                 <tr>
+                    <th scope="col">ID</th>
                     <th scope="col">Title</th>
                     <th scope="col">Description</th>
                     <th scope="col">Price</th>
@@ -22,7 +23,8 @@
                 <tbody>
                     @foreach ($comics as $comic)
                         <tr>
-                            <th>{{$comic->title}}</th>
+                            <th>{{$comic->id}}</th>
+                            <td>{{$comic->title}}</td>
                             <td>{{$comic->description}}</td>
                             <td>{{$comic->price}}</td>
                             <td>{{$comic->series}}</td>
