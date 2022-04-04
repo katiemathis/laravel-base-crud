@@ -19,6 +19,8 @@
                 <li class="list-group-item">Series: {{$comic->series}}</li>
                 </ul>
             </div>
+            <a type="button" class="btn btn-secondary" href="{{route('comic.edit', $comic->id)}}" role="button">Edit Details</a>
+
             <a type="button" class="btn btn-primary" href="{{route('comic.index')}}" role="button">Go Back</a>
     </div>
 
