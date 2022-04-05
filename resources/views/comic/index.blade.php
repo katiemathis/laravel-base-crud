@@ -32,8 +32,19 @@
                             <td>{{$comic->series}}</td>
                             <td>{{$comic->sale_date}}</td>
                             <td>{{$comic->type}}</td>
-                            <td><a type="button" class="btn btn-primary mt-5" href="{{route('comic.show', $comic->id)}}" role="button">See Details</a></td>
-                            <td><a type="button" class="btn btn-secondary mt-5" href="{{route('comic.edit', $comic->id)}}" role="button">Edit Details</a></td>
+                            <td class="d-flex">
+                                <a type="button" class="btn btn-primary m-1" href="{{route('comic.show', $comic->id)}}" role="button">Details</a>
+                                <a type="button" class="btn btn-secondary m-1" href="{{route('comic.edit', $comic->id)}}" role="button">Edit</a>
+                                <form method="POST" action="{{route('comic.destroy', $comic->id)}}">
+                                    @csrf
+                                    @method('DELETE')
+                                    
+                                    <button type="submit" class="btn btn-danger m-1" role="button">Delete</button>
+
+                                    
+
+                                </form>
+                            </td>
 
                         </tr>
                     @endforeach

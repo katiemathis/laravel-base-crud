@@ -38,6 +38,21 @@ class FumettiController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate(
+            [
+                'thumb' => 'required|url',
+                'title' => 'required|min:5',
+                'description' => 'required',
+                'price' => 'required|numeric|min:0',
+                'series' => 'required|min:5',
+                //'sale_date' => '',
+                'type' => 'required|min:5'
+            
+            ]
+        );
+
+        
+        
         $data = $request->all();
 
         
@@ -54,7 +69,7 @@ class FumettiController extends Controller
 
         $comic->save();
 
-        return redirect()->route('comic.index', ['comic' => $comic->id]);
+        return redirect()->route('comic.index', ['comic' => $comic->id])->with('status', 'comic added');
 
 
     }
@@ -116,7 +131,7 @@ class FumettiController extends Controller
 
         $comic->save();
 
-        return redirect()->route('comic.show', ['comic' => $comic->id]);
+        return redirect()->route('comic.show', ['comic' => $comic->id])->with('status', 'comic updated');
     }
 
     /**
@@ -125,8 +140,11 @@ class FumettiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+
+        return redirect()->route('comic.index')->with('status', 'comic deleted');
+
     }
 }
